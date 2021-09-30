@@ -24,7 +24,7 @@ CREATE TABLE artistas(
     nome VARCHAR(50) NOT NULL
 ) engine = InnoDB;
 
-CREATE TABLE albums(
+CREATE TABLE albuns(
     album_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL,
     artista_id INT NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE cancoes(
     cancao_id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL,
     album_id INT NOT NULL,
-    FOREIGN KEY(album_id) REFERENCES albums(album_id)
+    FOREIGN KEY(album_id) REFERENCES albuns(album_id)
 ) engine = InnoDB;
 
 CREATE TABLE historico_reproducoes(
@@ -71,7 +71,7 @@ VALUES
   ('Walter Phoenix'), ('Freedie Shannon'),
   ('Lance Day'), ('Peter Strong');
 
-INSERT INTO albums (nome, artista_id)
+INSERT INTO albuns (nome, artista_id)
 VALUES
   ('Envious', 1), ('Exuberant', 1),
   ('Hallowed Steam', 4), ('Incandescent', 3),
